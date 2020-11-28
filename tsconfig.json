@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "rootDir": "src/",
+      "outDir": "dist/",
+      "lib": ["es7", "dom", "esnext"],
+      "moduleResolution": "node",
+      "jsx": "react",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "plugins": [
+        {
+          "name": "typescript-tslint-plugin"
+        }
+      ],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "downlevelIteration": true
+    }
+  }

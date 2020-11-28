@@ -1,0 +1,5 @@
+{
+    "id":"RestDataMappingPicklistDev",
+    "version": "0.1.0",
+    "baseUri": "https://localhost:44300"
+  }

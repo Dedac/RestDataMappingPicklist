@@ -1,0 +1,7 @@
+div.work-item-label label {
+    color: rgba(0,0,0,.55);
+    font-size: 12px;
+    margin-bottom: 0;
+    padding-bottom: 1px;
+    padding-left: 4px;
+}
