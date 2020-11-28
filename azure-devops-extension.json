@@ -5,7 +5,7 @@
     "version": "0.1.0",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
-    "public": false,
+    "public": true,
     "icons": {
         "default": "img/logo.png"
     },
@@ -97,7 +97,7 @@
                   {
                     "id": "RestCallParameters",
                     "name": "Rest Call URL Parameters (JSON format)",
-                    "description": "Rest Service Password",
+                    "description": "Additional fields and values to provide to the rest service as URL parameters",
                     "inputMode": "TextArea",
                     "validation": {
                       "isRequired": false,
@@ -107,7 +107,7 @@
                   {
                     "id": "FieldMap",
                     "name": "Rest Service Field Map",
-                    "description": "Map additional rest service fields with JSON to Work Item Fields",
+                    "description": "Map fields from the rest service fields on the Work Item by mapping them in a JSON format",
                     "inputMode": "TextArea",
                     "validation": {
                       "isRequired": false,
