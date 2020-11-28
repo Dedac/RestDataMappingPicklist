@@ -1,7 +1,7 @@
 {
   "name": "rest-loader-control",
   "version": "1.0.0",
-  "description": "An Azure DevOps Work Item Control for laoding values from a Rest endpoint",
+  "description": "An Azure DevOps Work Item Control for loading values from a Rest endpoint",
   "main": "index.js",
   "scripts": {
     "build-dev": "webpack -p --mode=development",
