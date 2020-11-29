@@ -49,6 +49,7 @@ const controlConfig = {
             { from: "./node_modules/es6-promise/dist/es6-promise.min.js", to: "libs/es6-promise.min.js" },
             { from: "./node_modules/azure-devops-extension-sdk/SDK.min.js", to: "libs/SDK.min.js" },
             { from: "./src/selector.html", to: "./" },
+            { from: "./img", to: "img" },
             { from: "./src/RestSelector.css", to: "./" }, 
         ]
     })

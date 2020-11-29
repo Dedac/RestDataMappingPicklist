@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "RestDataMappingPicklist",
     "publisher": "dedac",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
     "public": true,
@@ -53,7 +53,7 @@
                 {
                     "id": "FieldName",
                     "name": "Select the field for this control.",
-                    "description": "The field associated with the control.",
+                    "description": "The field associated with the control, it will match the value from the rest service's key field.",
                     "type": "WorkItemField",
                     "properties": {
                         "workItemFieldTypes": ["String", "PlainText", "HTML"]
@@ -66,7 +66,7 @@
                 {
                     "id": "RestServiceAddress",
                     "name": "Rest Service Address",
-                    "description": "The URL to load the rest service",
+                    "description": "The URL for rest service from which you want to load data",
                     "validation": {
                         "dataType": "String",
                         "isRequired": true
@@ -112,8 +112,8 @@
                   },
                   {
                     "id": "ErrorMessage",
-                    "name": "Property not found error message",
-                    "description": "Error message to display if the property is not available",
+                    "name": "Selection Not Found Error message",
+                    "description": "Error message presented when the selected value is not found",
                     "validation": {
                       "isRequired": false,
                       "dataType": "String"
