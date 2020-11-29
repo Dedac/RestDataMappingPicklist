@@ -1,7 +1,7 @@
 import * as SDK from 'azure-devops-extension-sdk';
 import axios from 'axios';
 
-export async function LoadServiceNowAssets() {
+export async function LoadDataFromService() {
     const inputs = SDK.getConfiguration().witInputs;
     const address = inputs.RestServiceAddress;
     const username = inputs.RestServiceUserName;
@@ -11,20 +11,23 @@ export async function LoadServiceNowAssets() {
         try {
             params = JSON.parse(inputs.RestCallParameters);
         } catch(e) {
-            //return error?
+            return;
+            //TODO: return error message
         }
     }
-
-    var req = axios.create({
+ 
+    var reqConfig = { 
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json'
-        },
-        auth: {
-            username: username,
-            password: password
         }
-    })
+    };
+    
+    if (username || password)
+        reqConfig['auth'] = { username: username, password: password };
+
+    var req = axios.create(reqConfig);
+
     return req.get(address,
         {
             params: params

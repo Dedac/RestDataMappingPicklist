@@ -1,18 +1,21 @@
 import * as SDK from 'azure-devops-extension-sdk';
 import { WorkItemTrackingServiceIds, IWorkItemFormService } from "azure-devops-extension-api/WorkItemTracking/WorkItemTrackingServices";
-import { LoadServiceNowAssets } from './rest-call';
+import { LoadDataFromService } from './rest-call';
+import get from 'lodash/get'; 
 
 export class RestServiceData {
 
   public data = [];
 
   public async getSuggestedValues(): Promise<string[]> {
-    const resp = await LoadServiceNowAssets();
+    const resp = await LoadDataFromService();
     const keyFieldName = SDK.getConfiguration().witInputs.RestServiceKeyField;
-
-    if (resp.data.result) {
-      this.data = resp.data.result;
-      var a = resp.data.result.map((a: any) => a[keyFieldName]);
+    const arrayPath = SDK.getConfiguration().witInputs.PathToArray;
+    
+    var arrayData = get(resp, arrayPath);
+    if (arrayData) {
+      this.data = arrayData;
+      var a = arrayData.map((a: any) => a[keyFieldName]);
       return [...new Set<string>(a.sort())];
     }
     else {
