@@ -2,12 +2,12 @@
     "manifestVersion": 1.0,
     "id": "RestDataMappingPicklist",
     "publisher": "dedac",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
     "public": true,
     "icons": {
-        "default": "img/logo.png"
+        "default": "img/Logo.png"
     },
     "categories": [
         "Azure Boards"
@@ -147,6 +147,10 @@
         {
             "path": "dist",
             "addressable": true
+        },
+        {
+            "path": "img",
+            "addressable":true
         }
     ]
 }
