@@ -11,12 +11,13 @@ export class RestServiceData {
     const resp = await LoadDataFromService();
     const keyFieldName = SDK.getConfiguration().witInputs.RestServiceKeyField;
     const arrayPath = SDK.getConfiguration().witInputs.PathToArray;
-    
-    var arrayData = get(resp, arrayPath);
+
+    var arrayData = get(resp.data, arrayPath, resp.data);
+
     if (arrayData) {
       this.data = arrayData;
-      var a = arrayData.map((a: any) => a[keyFieldName]);
-      return [...new Set<string>(a.sort())];
+      var fieldSet = arrayData.map((a: any) => a[keyFieldName]);
+      return [...new Set<string>(fieldSet.sort())];
     }
     else {
       // if the values input were not specified as an input, get the suggested values for the field.

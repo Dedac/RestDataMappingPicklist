@@ -1,8 +1,11 @@
-Get REST data and pick from a single picklist with the option to map additional data back to your work item.
+Get REST data and pick from a type-ahead filtering picklist with the option to map additional data back to your work item.
+
+![Using the Picklist](img/Usage.gif)
+
 Use this with the ServiceNow table api, or any other Rest API.
 
-If a rest service returns and array of objects, select the key field that should be in the drop down, and when and item is selected, other fields in the work item can be updated by the rest data.
-
+The rest data that is returned can be used to automatically update other fields in the work item.
+Use the field mapping configuration illustrated below to map fields from the rest service to field names in Azure DevOps
 
 Sample Rest Response from which you want to extract a picklist.
 ```
@@ -29,12 +32,12 @@ Sample Rest Response from which you want to extract a picklist.
 
 Sample Settigns for Calling this Service
 
-| Setting | Value |
-|---|---|
-| Rest Service Key Field | `email` |
-| JSON Path to the Array | `data` |
-| Rest Call URL parameters | `{ "page":"2" }` |
-| FieldMap | `{ "Custom.SelectedUserId" : "id", "Custom.SelectedUser" : "last_name" } ` |
+- Rest Service Key Field ```email```
+- JSON Path to the Array ```data```
+- Rest Call URL parameters ```{ "page":"2" }```
+- FieldMap ```{ "Custom.ExternalUserId" : "id", "Custom.SelectedUser" : "first_name" }```
+
+![Settings Form](img/Settings.gif)
 
 'Custom.' are custom field names in Azure DevOps, use the fields names that you want data from the rest service mapped to.
 

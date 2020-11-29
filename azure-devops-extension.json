@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "RestDataMappingPicklist",
     "publisher": "dedac",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
     "public": true,
@@ -64,6 +64,15 @@
                     }
                 },
                 {
+                    "id": "RestServiceAddress",
+                    "name": "Rest Service Address",
+                    "description": "The URL to load the rest service",
+                    "validation": {
+                        "dataType": "String",
+                        "isRequired": true
+                    }
+                },
+                {
                     "id": "RestServiceKeyField",
                     "name": "Rest Service Key Field",
                     "description": "Select the key field from the rest service that matches the control field",
@@ -73,14 +82,14 @@
                     }
                 },
                 {
-                    "id": "RestServiceAddress",
-                    "name": "Rest Service Address",
-                    "description": "The URL to load the rest service",
-                    "validation": {
-                        "dataType": "String",
-                        "isRequired": true
-                    }
-                },
+                  "id": "PathToArray",
+                  "name": "JSON Path to the Array",
+                  "description": "path within the returned JSON data to find the array of items listed - often something like 'data.result'",
+                  "validation": {
+                    "isRequired": false,
+                    "dataType": "String"
+                  }
+                }, 
                 {
                     "id": "RestServiceUserName",
                     "name": "Rest Service User Name",
@@ -102,15 +111,6 @@
                     }
                   },
                   {
-                    "id": "PathToArray",
-                    "name": "JSON Path to the Array",
-                    "description": "path within the returned JSON data to find the array of items listed - often something like 'data.result'",
-                    "validation": {
-                      "isRequired": false,
-                      "dataType": "String"
-                    }
-                  }, 
-                  {
                     "id": "ErrorMessage",
                     "name": "Property not found error message",
                     "description": "Error message to display if the property is not available",
@@ -131,7 +131,7 @@
                   },
                   {
                     "id": "FieldMap",
-                    "name": "Rest Service Field Map",
+                    "name": "Rest Service Field Map (JSON format)",
                     "description": "Map fields from the rest service fields on the Work Item by mapping them in a JSON format",
                     "inputMode": "TextArea",
                     "validation": {
