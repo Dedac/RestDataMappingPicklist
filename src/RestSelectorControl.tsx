@@ -5,7 +5,7 @@ import { Spinner, SpinnerSize } from "azure-devops-ui/Spinner";
 import { ConditionalChildren } from "azure-devops-ui/ConditionalChildren";
 import { TextField, TextFieldWidth } from "azure-devops-ui/TextField";
 import { FormItem } from "azure-devops-ui/FormItem"
-import * as SDK from 'azure-devops-extension-sdk';
+
 
 const inputField = React.createRef<HTMLTextAreaElement & HTMLInputElement>();
 const optionsObservable = new ObservableValue<Array<string>>([]);
