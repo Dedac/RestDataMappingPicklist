@@ -139,6 +139,16 @@
                       "isRequired": false,
                       "dataType": "String"
                     }
+                  },
+                  {
+                    "id": "ShowFieldName",
+                    "name": "Show native Field name",
+                    "description": "Wnen checked, the native DefOps field name will be displayed in the control",
+                    "inputMode": "CheckBox",
+                    "validation": {
+                      "isRequired": false,
+                      "dataType": "Boolean"
+                    }
                   }
                 ]
             }
@@ -151,7 +161,7 @@
         },
         {
             "path": "img",
-            "addressable":true
+            "addressable": true
         }
     ]
 }
