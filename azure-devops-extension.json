@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "RestDataMappingPicklist",
     "publisher": "dedac",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
     "public": true,
@@ -141,9 +141,9 @@
                     }
                   },
                   {
-                    "id": "ShowFieldName",
-                    "name": "Show native Field name",
-                    "description": "When checked, the native DevOps field name will be displayed in the control",
+                    "id": "HideFieldLabel",
+                    "name": "Hide native Field label",
+                    "description": "When checked, the native DevOps field label will not be displayed in the control",
                     "inputMode": "CheckBox",
                     "validation": {
                       "isRequired": false,

@@ -5,7 +5,7 @@ import { Spinner, SpinnerSize } from "azure-devops-ui/Spinner";
 import { ConditionalChildren } from "azure-devops-ui/ConditionalChildren";
 import { TextField, TextFieldWidth } from "azure-devops-ui/TextField";
 import { FormItem } from "azure-devops-ui/FormItem";
-import * as SDK from 'azure-devops-extension-sdk';
+import { getConfiguration } from 'azure-devops-extension-sdk';
 
 const inputField = React.createRef<HTMLTextAreaElement & HTMLInputElement>();
 const optionsObservable = new ObservableValue<Array<string>>([]);
@@ -43,9 +43,9 @@ export class RestSelectorControl extends React.Component<ISelectorProps> {
 
     public render() {
         let labelVar = '';
-            if (SDK.getConfiguration().witInputs.ShowFieldName) {
-            labelVar = this.props.fieldName;
-        }
+            if (!getConfiguration().witInputs.HideFieldLabel) {
+              labelVar = this.props.fieldName;
+            }
         return <FormItem label={labelVar} className="work-item-label" message={this.props.message} error={errorObservable}>
             <div className="flex-row" style={{ width:"100%" }}>
                 <TextField
