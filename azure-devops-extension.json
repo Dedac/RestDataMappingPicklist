@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "RestDataMappingPicklist",
     "publisher": "dedac",
-    "version": "0.1.8",
+    "version": "0.2.3",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
     "public": true,
@@ -93,8 +93,8 @@
                 }, 
                 {
                     "id": "RestServiceUserName",
-                    "name": "Rest Service User Name",
-                    "description": "The name of the property to load from the rest service",
+                    "name": "Rest Service User Name / 'Bearer'",
+                    "description": "The name of the property to load from the rest service, use 'Bearer' for token auth",
                     "validation": {
                         "dataType": "String",
                         "isRequired": false
@@ -102,8 +102,8 @@
                 },
                 {
                     "id": "RestServicePassword",
-                    "name": "Rest Service Password",
-                    "description": "Rest Service Password",
+                    "name": "Rest Service Password / Token",
+                    "description": "Rest Service Password, passed as a bearer token if the username is 'Bearer'",
                     "inputMode": "PasswordBox",
                     "isConfidential": true,
                     "validation": {
