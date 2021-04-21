@@ -3,6 +3,7 @@ import {
   IWorkItemLoadedArgs,
   IWorkItemFieldChangedArgs,
 } from "azure-devops-extension-api/WorkItemTracking/WorkItemTrackingServices";
+import "azure-devops-ui/Core/override.css";
 import { SelectorEvents } from "./SelectorEvents";
 
 SDK.init({
