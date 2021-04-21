@@ -24,8 +24,13 @@ export async function LoadDataFromService() {
     };
     
     if (username || password)
-        reqConfig['auth'] = { username: username, password: password };
-
+    {
+        if (username == "Bearer" || username == "bearer")
+            reqConfig.headers["Authorization"] = username + " " + password;
+        else
+            reqConfig['auth'] = { username: username, password: password };
+    }
+    
     var req = axios.create(reqConfig);
 
     return req.get(address,
