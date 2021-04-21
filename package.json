@@ -1,6 +1,6 @@
 {
-  "name": "rest-loader-control",
-  "version": "1.0.0",
+  "name": "rest-data-mapping-picklist",
+  "version": "0.2.5",
   "description": "An Azure DevOps Work Item Control for loading values from a Rest endpoint",
   "main": "index.js",
   "scripts": {
