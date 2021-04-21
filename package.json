@@ -22,7 +22,7 @@
     "axios": "^0.21.1",
     "azure-devops-extension-api": "^1.152.3",
     "azure-devops-extension-sdk": "^2.0.10",
-    "azure-devops-ui": "^1.160.4",
+    "azure-devops-ui": "^2.167.2",
     "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
