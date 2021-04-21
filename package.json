@@ -19,7 +19,7 @@
   "author": "Richard Goforth",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "azure-devops-extension-api": "^1.152.3",
     "azure-devops-extension-sdk": "^2.0.10",
     "azure-devops-ui": "^1.160.4",
@@ -49,6 +49,7 @@
     "prettier": "^1.18.2",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
+    "tfx-cli": "^0.8.3",
     "ts-loader": "^6.0.2",
     "typescript": "^3.5.2",
     "typescript-styled-plugin": "^0.14.0",

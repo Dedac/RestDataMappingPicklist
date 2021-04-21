@@ -1,6 +1,6 @@
 {
     "id":"RestDataMappingPicklistDev",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "baseUri": "https://localhost:44300",
     "public": false
 }
