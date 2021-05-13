@@ -49,7 +49,7 @@ export class SelectorEvents {
     private async _getSelected(): Promise<string> {
         const formService = await SDK.getService<IWorkItemFormService>(WorkItemTrackingServiceIds.WorkItemFormService);
 
-        const value = await formService.getFieldValue(this.fieldName);
+        const value = await formService.getFieldValue(this.fieldName, { returnOriginalValue: false });
         if (typeof value !== "string") {
             return;
         }
