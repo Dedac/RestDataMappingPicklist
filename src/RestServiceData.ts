@@ -1,14 +1,20 @@
 import * as SDK from 'azure-devops-extension-sdk';
 import { WorkItemTrackingServiceIds, IWorkItemFormService } from "azure-devops-extension-api/WorkItemTracking/WorkItemTrackingServices";
 import { LoadDataFromService } from './rest-call';
-import get from 'lodash/get'; 
+import get from 'lodash/get';
+import { AxiosResponse } from 'axios';
 
 export class RestServiceData {
 
   public data = [];
 
   public async getSuggestedValues(): Promise<string[]> {
-    const resp = await LoadDataFromService();
+    var resp: AxiosResponse<any>;
+    try {
+      resp = await LoadDataFromService();
+    } catch (error) {
+      return Promise.resolve([]);
+    }
     const keyFieldName = SDK.getConfiguration().witInputs.RestServiceKeyField;
     const arrayPath = SDK.getConfiguration().witInputs.PathToArray;
 

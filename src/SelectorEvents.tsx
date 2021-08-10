@@ -31,7 +31,7 @@ export class SelectorEvents {
             }
             catch (e) {
                 console.info("Error parsing the field map " + e);
-                //we dont' have to do anything if the map isn't valid json
+                //we don't have to do anything if the map isn't valid json
                 this.fieldMap = null;
             }
         }
@@ -41,7 +41,7 @@ export class SelectorEvents {
             fieldName={friendlyName}
             selected={this.valueObservable}
             options={this.serviceData.getSuggestedValues()}
-            placeholder="Select"
+            placeholder=""
             message={this.messageObservable}
         />, this._container);
     }

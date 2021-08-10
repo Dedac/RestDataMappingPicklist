@@ -6,6 +6,8 @@ Use this with the ServiceNow table api, or any other Rest API.
 
 You can now use basic auth by adding the username and password, or use token authentication by using the username "Bearer", and use the token in the password field
 
+For Azure DevOps rest calls, you can also use the username 'Basic' with the PAT in the password field
+
 The rest data that is returned can be used to automatically update other fields in the work item.
 Use the field mapping configuration illustrated below to map fields from the rest service to field names in Azure DevOps
 
@@ -43,5 +45,5 @@ Sample Settigns for Calling this Service
 
 'Custom.' are custom field names in Azure DevOps, use the fields names that you want data from the rest service mapped to.
 
-Add https://dedac.gallerycdn.vsassets.io to the CORS allowed domains to use the extension
+You may have to Add https://dedac.gallerycdn.vsassets.io to the CORS allowed domains on the rest service that you are calling to use the extension.  This isn't necessary for calling back into the Azure DevOps API
 

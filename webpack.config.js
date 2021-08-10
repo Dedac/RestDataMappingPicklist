@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -39,7 +38,6 @@ const controlConfig = {
     },
     plugins: [
       new webpack.optimize.ModuleConcatenationPlugin(),
-      new LodashModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/selector.html',
         filename: 'selector.html',        
