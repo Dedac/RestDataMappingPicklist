@@ -3,10 +3,14 @@
   "version": "0.2.7",
   "description": "An Azure DevOps Work Item Control for loading values from a Rest endpoint",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dedac/RestDataMappingPicklist"
+  },
   "scripts": {
     "build-dev": "webpack --mode=development",
     "package-dev": "tfx extension create --manifest-globs azure-devops-extension.json --overrides-file azure-devops-extension-dev.json",
-    "serve-dev": "webpack-dev-server --cert localhost.crt --key localhost.key",
+    "serve-dev": "webpack serve --cert localhost.crt --key localhost.key",
     "watch": "webpack --watch",
     "build": "webpack --mode=production",
     "postbuild": "npm run package",
@@ -20,8 +24,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "azure-devops-extension-api": "^1.152.3",
-    "azure-devops-extension-sdk": "^2.0.10",
+    "azure-devops-extension-api": "^1.158.0",
+    "azure-devops-extension-sdk": "^2.0.11",
     "azure-devops-ui": "^2.167.2",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
@@ -53,7 +57,7 @@
     "typescript-styled-plugin": "^0.18.0",
     "underscore": "^1.12.1",
     "webpack": "^5.49.0",
-    "webpack-cli": "^3.3.3",
+    "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   }
 }
