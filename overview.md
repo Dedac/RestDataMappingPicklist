@@ -39,7 +39,7 @@ Sample Settigns for Calling this Service
 
 - Rest Service Key Field `email`
 - JSON Path to the Array `data`
-- Rest Call URL parameters `{ "page":"2" }` . You can also use dynamic values with FieldValues `{ "id":"{Custom.SomeId}" }` will produce `rest-service-url?id=38443279 }`
+- Rest Call URL parameters `{ "page":"2" }` . You can also use dynamic values with FieldValues `{ "id":"{Custom.SomeId}" }` will produce `rest-service-url?id=38443279`
 - FieldMap `{ "Custom.ExternalUserId" : "id", "Custom.SelectedUser" : "first_name" }`
 
 ![Settings Form](img/Settings.gif)
