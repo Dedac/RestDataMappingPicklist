@@ -7,6 +7,8 @@ const controlConfig = {
     mode: 'development',
     output: {
       filename: 'selector.js', 
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/dist/',
     },
     devtool: 'inline-source-map',
     devServer: {

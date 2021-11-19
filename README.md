@@ -11,7 +11,8 @@ Build the dev version and run locally
     npm run package-dev
     ```
 1. Upload the Visual Studio Marketplace and invite a test organization
-1. Setup a local signing certificate here are some sample [instructions](https://gist.github.com/pgilad/63ddb94e0691eebd502deee207ff62bd)  Add the cert in Windows by double clicking it.  You may have to add the cert in your browser settings as well
+1. Setup a local signing certificate here are some sample [instructions](https://gist.github.com/pgilad/63ddb94e0691eebd502deee207ff62bd)  
+    (you can skip this step, but when you serve-dev navigate to `https://localhost:44300/webpack-dev-server` and accept that you are going somewhere 'unsafe')
 1. Build and run the extension locally 
     ```
     npm run serve-dev
