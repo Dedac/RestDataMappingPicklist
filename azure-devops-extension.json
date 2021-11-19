@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "RestDataMappingPicklist",
     "publisher": "dedac",
-    "version": "0.2.8",
+    "version": "0.3.0",
     "name": "Rest Data Mapping Picklist",
     "description": "Load work item values from a specified REST endpoint and map additional REST data to your work item",
     "public": true,
@@ -123,7 +123,7 @@
                   {
                     "id": "RestCallParameters",
                     "name": "Rest Call URL Parameters (JSON format)",
-                    "description": "Additional fields and values to provide to the rest service as URL parameters",
+                    "description": "Additional fields and values to provide to the rest service as URL parameters, use $() to substitute in a field value from the work item",
                     "inputMode": "TextArea",
                     "validation": {
                       "isRequired": false,

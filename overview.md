@@ -39,11 +39,12 @@ Sample Settigns for Calling this Service
 
 - Rest Service Key Field `email`
 - JSON Path to the Array `data`
-- Rest Call URL parameters `{ "page":"2" }` . You can also use dynamic values with FieldValues `{ "id":"{Custom.SomeId}" }` will produce `rest-service-url?id=38443279`
+- Rest Call URL parameters `{ "page":"2" }`
+  - You can also use dynamic values from form field values (ie. `{ "id":"$(Custom.YourField)" }` will produce `rest-service-url?id=38443279`)
 - FieldMap `{ "Custom.ExternalUserId" : "id", "Custom.SelectedUser" : "first_name" }`
 
 ![Settings Form](img/Settings.gif)
 
-'Custom.' are custom field names in Azure DevOps, use the fields names that you want data from the rest service mapped to.
+`Custom.` are custom field names in Azure DevOps, use the fields names that you want data from the rest service mapped to.
 
 You may have to Add https://dedac.gallerycdn.vsassets.io to the CORS allowed domains on the rest service that you are calling to use the extension. This isn't necessary for calling back into the Azure DevOps API
