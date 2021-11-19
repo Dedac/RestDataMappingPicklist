@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -7,8 +6,7 @@ const controlConfig = {
     entry: './src/index.tsx',
     mode: 'development',
     output: {
-      filename: 'selector.js',
-      path: path.resolve(__dirname, 'dist'),
+      filename: 'selector.js', 
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -36,8 +34,10 @@ const controlConfig = {
         },
       ],
     },
+    optimization: {
+      concatenateModules : true,
+    },
     plugins: [
-      new webpack.optimize.ModuleConcatenationPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/selector.html',
         filename: 'selector.html',        
@@ -46,7 +46,6 @@ const controlConfig = {
         patterns: [
             { from: "./node_modules/es6-promise/dist/es6-promise.min.js", to: "libs/es6-promise.min.js" },
             { from: "./node_modules/azure-devops-extension-sdk/SDK.min.js", to: "libs/SDK.min.js" },
-            { from: "./src/selector.html", to: "./" },
             { from: "./img/logo.png", to: "img/logo.png" },
             { from: "./src/RestSelector.css", to: "./" }, 
         ]

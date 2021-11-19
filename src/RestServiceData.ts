@@ -21,6 +21,11 @@ export class RestServiceData {
     var arrayData = get(resp.data, arrayPath, resp.data);
 
     if (arrayData) {
+      if (arrayData.constructor !== Array) {
+        console.dir(arrayData);
+        console.error("response is not an array ^");
+        return Promise.resolve([]);
+      }
       this.data = arrayData;
       var fieldSet = arrayData.map((a: any) => a[keyFieldName]);
       return [...new Set<string>(fieldSet.sort())];
