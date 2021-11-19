@@ -12,6 +12,7 @@ The rest data that is returned can be used to automatically update other fields 
 Use the field mapping configuration illustrated below to map fields from the rest service to field names in Azure DevOps
 
 Sample Rest Response from which you want to extract a picklist.
+
 ```
 {
     "page": 2,
@@ -36,14 +37,13 @@ Sample Rest Response from which you want to extract a picklist.
 
 Sample Settigns for Calling this Service
 
-- Rest Service Key Field ```email```
-- JSON Path to the Array ```data```
-- Rest Call URL parameters ```{ "page":"2" }```
-- FieldMap ```{ "Custom.ExternalUserId" : "id", "Custom.SelectedUser" : "first_name" }```
+- Rest Service Key Field `email`
+- JSON Path to the Array `data`
+- Rest Call URL parameters `{ "page":"2" }` . You can also use dynamic values with FieldValues `{ "id":"{Custom.SomeId}" }` will produce `rest-service-url?id=38443279`
+- FieldMap `{ "Custom.ExternalUserId" : "id", "Custom.SelectedUser" : "first_name" }`
 
 ![Settings Form](img/Settings.gif)
 
 'Custom.' are custom field names in Azure DevOps, use the fields names that you want data from the rest service mapped to.
 
-You may have to Add https://dedac.gallerycdn.vsassets.io to the CORS allowed domains on the rest service that you are calling to use the extension.  This isn't necessary for calling back into the Azure DevOps API
-
+You may have to Add https://dedac.gallerycdn.vsassets.io to the CORS allowed domains on the rest service that you are calling to use the extension. This isn't necessary for calling back into the Azure DevOps API
