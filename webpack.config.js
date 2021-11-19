@@ -7,13 +7,14 @@ const controlConfig = {
     mode: 'development',
     output: {
       filename: 'selector.js', 
-      path: path.resolve(__dirname, 'dist'),
-      publicPath: '/dist/',
     },
     devtool: 'inline-source-map',
     devServer: {
         server: 'https',
-        port:44300
+        port:44300,
+        devMiddleware: {
+            publicPath: '/dist/'
+        }
     },
     resolve: {
       extensions: ['.json', '.ts', '.tsx', '.js','.css'],
