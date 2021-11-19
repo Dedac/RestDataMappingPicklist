@@ -6,8 +6,9 @@ const controlConfig = {
     entry: './src/index.tsx',
     mode: 'development',
     output: {
-      filename: 'dist/selector.js', 
-      path: path.resolve(__dirname, 'dist')
+      filename: 'selector.js', 
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/dist/',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -41,14 +42,14 @@ const controlConfig = {
     plugins: [
       new HtmlWebpackPlugin({
         template: 'src/selector.html',
-        filename: 'dist/selector.html',        
+        filename: 'selector.html',        
       }),
       new CopyWebpackPlugin({
         patterns: [
             { from: "./node_modules/es6-promise/dist/es6-promise.min.js", to: "libs/es6-promise.min.js" },
             { from: "./node_modules/azure-devops-extension-sdk/SDK.min.js", to: "libs/SDK.min.js" },
             { from: "./img/Logo.png", to: "img/logo.png" },
-            { from: "./src/RestSelector.css", to: "./dist/" }, 
+            { from: "./src/RestSelector.css", to: "./" }, 
         ]
     })
     ],
