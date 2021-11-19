@@ -81,3 +81,4 @@ ssl.conf
 
 # Ignore webpack build
 dist/
+.DS_Store
