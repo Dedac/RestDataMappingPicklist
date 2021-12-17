@@ -37,7 +37,7 @@
     "@types/react": "^16.14.20",
     "@types/react-dom": "^16.9.12",
     "@types/styled-components": "^5.1.9",
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^1.10.2",
     "azure-devops-node-api": "^11.0.1",
     "copy-webpack-plugin": "^9.1.0",
