@@ -40,7 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.10.2",
     "azure-devops-node-api": "^11.0.1",
-    "copy-webpack-plugin": "^9.1.0",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
