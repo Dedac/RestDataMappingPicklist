@@ -1,6 +1,6 @@
 {
   "name": "rest-data-mapping-picklist",
-  "version": "0.3.5",
+  "version": "0.3.7",
   "description": "An Azure DevOps Work Item Control for loading values from a Rest endpoint",
   "main": "index.js",
   "repository": {
@@ -15,8 +15,8 @@
     "build": "webpack --mode=production",
     "postbuild": "npm run package",
     "package": "tfx extension create --manifest-globs azure-devops-extension.json",
-    "gallery-publish": "tfx extension publish --manifest-globs azure-devops-extension.json --rev-version",
-    "gallery-publish-dev": "tfx extension publish --manifest-globs azure-devops-extension.json --overrides-file azure-devops-extension-dev.json --rev-version",
+    "gallery-publish": "tfx extension publish --manifest-globs azure-devops-extension.json",
+    "gallery-publish-dev": "tfx extension publish --manifest-globs azure-devops-extension.json --overrides-file azure-devops-extension-dev.json",
     "clean": "rimraf ./dist && rimraf ./*.vsix",
     "lint": "eslint ."
   },
