@@ -17,9 +17,9 @@ export class RestServiceData {
     }
     const keyFieldName = SDK.getConfiguration().witInputs.RestServiceKeyField;
     const arrayPath = SDK.getConfiguration().witInputs.PathToArray;
-
-    var arrayData = get(resp.data, arrayPath, resp.data);
-
+    if (resp !== undefined && resp.data !== undefined) {
+      var arrayData = get(resp.data, arrayPath, resp.data);
+    }
     if (arrayData) {
       if (arrayData.constructor !== Array) {
         console.dir(arrayData);
