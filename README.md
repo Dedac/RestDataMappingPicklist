@@ -2,6 +2,9 @@
 #### An Azure DevOps Work Item Form Extension
 
 This is an extension for Azure DevOps to load Rest data into a simple picklist.
+
+https://marketplace.visualstudio.com/items?itemName=dedac.RestDataMappingPicklist
+
 You can map additional data from the same rest call to other fields in the Work Item
 
 Build the dev version and run locally
@@ -27,4 +30,4 @@ To Build and package the control for production, simply run
 npm run build
 ```
 
-And upload to the visual studio marketplace
+And upload to the visual studio marketplace, or use `npm run gallery-publish` with your valid token
