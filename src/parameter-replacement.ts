@@ -10,8 +10,15 @@ export async function ReplaceFieldParameters(hasFields:string) : Promise<string>
         var replaceMe = hasFields.substring(index, endIndex + 1);
         var fieldName = replaceMe.replace('$(', '').replace(')', '').trim();
         var value = await service.getFieldValue(fieldName, { returnOriginalValue: false });
-        if (typeof value === "string") {        
-            hasFields = hasFields.replace(replaceMe, value);
+        if (!!value && !!value.toString()) {
+            var escapedValue = JSON.stringify(value);
+            // remove outer quotes from the escaped value if they exist
+            // this assumes the user has added quotes of their own in the configuration
+            if (escapedValue.startsWith('"') && escapedValue.endsWith('"')) {
+                escapedValue = escapedValue.substring(1, escapedValue.length - 1);
+            }
+
+            hasFields = hasFields.replace(replaceMe, escapedValue);
         } else  {
             hasFields = hasFields.replace(replaceMe, "");
         }
