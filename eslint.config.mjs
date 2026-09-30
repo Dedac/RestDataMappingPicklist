@@ -1,8 +1,27 @@
-module.exports = {
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
+import globals from 'globals';
+import tsParser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+
+export default [
+  {
+    ignores: ['dist/'],
+  },
+  reactPlugin.configs.flat.recommended,
+  {
+    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.es2015,
+        ...globals.node,
       },
     },
     settings: {
@@ -10,35 +29,34 @@ module.exports = {
         version: 'detect',
       },
     },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
     rules: {
+      ...tsPlugin.configs.recommended.rules,
+
       // Indentation rule
-      indent: 0,
-      '@typescript-eslint/indent': ['error', 2],
-  
+      indent: ['error', 2],
+
       // Force single quotes
       quotes: ['error', 'single'],
-  
+
       // Allow logs
       'no-console': 1,
-  
+
       // Force no ununsed variables
       'no-unused-vars': 2,
-  
-      // Allow object type
-      '@typescript-eslint/ban-types': 0,
-  
+
       // Force windows linebreak styles
       'linebreak-style': [2, 'unix'],
-  
+
       // Force semicolons
       semi: [2, 'always'],
-  
+
       // Turn off explicit return type
       '@typescript-eslint/explicit-function-return-type': 0,
-  
-      // Turn off interface name prefixing
-      '@typescript-eslint/interface-name-prefix': 0,
-  
+
       // React rules
       'react/display-name': 0,
       'react/forbid-prop-types': 0,
@@ -53,7 +71,6 @@ module.exports = {
       'react/jsx-no-literals': 0,
       'react/jsx-no-undef': 1,
       'react/jsx-pascal-case': 1,
-      'react/jsx-sort-prop-types': 0,
       'react/jsx-sort-props': 0,
       'react/jsx-uses-react': 1,
       'react/jsx-uses-vars': 1,
@@ -71,16 +88,10 @@ module.exports = {
       'react/react-in-jsx-scope': 1,
       'react/self-closing-comp': 1,
       'react/sort-comp': 1,
-  
+
       // React Hooks rules
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
     },
-    env: {
-      browser: true,
-      es6: true,
-      node: true,
-    },
-    plugins: ['react', 'react-hooks', '@typescript-eslint'],
-    extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
-  };
+  },
+];
