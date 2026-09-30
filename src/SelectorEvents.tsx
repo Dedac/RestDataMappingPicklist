@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as SDK from 'azure-devops-extension-sdk';
-import { IWorkItemFormService, WorkItemTrackingServiceIds, IWorkItemLoadedArgs, IWorkItemFieldChangedArgs } from "azure-devops-extension-api/WorkItemTracking/WorkItemTrackingServices";
+import { IWorkItemFormService, WorkItemTrackingServiceIds, IWorkItemLoadedArgs, IWorkItemFieldChangedArgs } from "azure-devops-extension-api/WorkItemTracking";
 
 import { RestSelectorControl } from "./RestSelectorControl";
 import { RestServiceData } from "./RestServiceData";

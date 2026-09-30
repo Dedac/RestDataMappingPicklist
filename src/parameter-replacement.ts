@@ -1,5 +1,5 @@
 import * as SDK from 'azure-devops-extension-sdk';
-import { IWorkItemFormService, WorkItemTrackingServiceIds } from 'azure-devops-extension-api/WorkItemTracking/WorkItemTrackingServices';
+import { IWorkItemFormService, WorkItemTrackingServiceIds } from 'azure-devops-extension-api/WorkItemTracking';
 
 export async function ReplaceFieldParameters(hasFields:string) : Promise<string> {
     const service = await SDK.getService<IWorkItemFormService>(WorkItemTrackingServiceIds.WorkItemFormService);

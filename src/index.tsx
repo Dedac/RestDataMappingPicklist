@@ -2,7 +2,7 @@ import * as SDK from 'azure-devops-extension-sdk';
 import {
   IWorkItemLoadedArgs,
   IWorkItemFieldChangedArgs,
-} from "azure-devops-extension-api/WorkItemTracking/WorkItemTrackingServices";
+} from "azure-devops-extension-api/WorkItemTracking";
 import "azure-devops-ui/Core/override.css";
 import { SelectorEvents } from "./SelectorEvents";
 
