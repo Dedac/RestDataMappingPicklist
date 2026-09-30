@@ -76,6 +76,7 @@ export class RestSelectorControl extends React.Component<ISelectorProps> {
 
     public render() {
         const label = getConfiguration().witInputs.HideFieldLabel ? undefined : this.props.fieldName;
+        const ariaLabel = label ? undefined : this.props.fieldName;
         const datalistId = this.getDatalistId();
 
         return <FormItem className="work-item-label" message={this.props.message} error={errorObservable}>
@@ -89,6 +90,7 @@ export class RestSelectorControl extends React.Component<ISelectorProps> {
                     inputElement={this.inputField}
                     inputId={this.getInputId()}
                     label={label}
+                    ariaLabel={ariaLabel}
                 />
                 <ConditionalChildren inverse={true} renderChildren={this.dataLoaded}>
                     <div style={{ marginLeft: "1em" }} />
